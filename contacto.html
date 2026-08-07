@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D5S7022K5D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D5S7022K5D');
+</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EGICH – Presentación</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="egich.css">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><img src="logo.jpg" alt="Logo" class="custom-logo"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Quienes Somos</a></li>    
+        <li class="nav-item"><a class="nav-link" href="servicios.html">Expertos en</a></li>
+        <li class="nav-item"><a class="nav-link" href="equipo.html">Equipo</a></li>
+        <li class="nav-item"><a class="nav-link" href="novedades.html">Publicaciones</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <header class="hero-section text-white text-center">
+    <div class="container py-5">
+      <h1 class="display-4 fw-bold">Empresa de Gestión Integral del Capital Humano</h1>
+      <p class="lead">Fusionamos Talento y Tecnología para profesionalizar equipos con propósito</p>
+    </div>
+  </header>
+
+  <!-- Loader y superposición -->
+  <div class="overlay" id="overlay"></div>
+  <div class="loader" id="loader"></div>
+
+  <div class="container contact-container">
+    <div class="contact-form">
+      <p>Complete el siguiente formulario para ponerse en contacto con nosotros. O escriba un correo a info@egich.com</p>
+      <form action="process_contact.php" method="post" onsubmit="showLoader()">
+        <label for="name">Nombre y Apellido:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Teléfono:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="country">País:</label>
+        <input type="text" id="country" name="country" required>
+
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <input type="submit" value="Enviar">
+      </form>
+    </div>
+
+  
+  </div>
+
+  <footer class="fondo-verde text-light py-4 mt-5">
+    <div class="container text-center">
+      <p class="mb-1">Teléfono: +54 9 11 3934-4966</p>
+      <p class="mb-1">Email: info@egich.com</p>
+      <div class="social-icons">
+        <a href="#" class="text-light me-3"><i class="fab fa-facebook fa-lg"></i></a>
+        <a href="#" class="text-light me-3"><i class="fab fa-instagram fa-lg"></i></a>
+        <a href="#" class="text-light me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+        <a href="#" class="text-light"><i class="fab fa-twitter fa-lg"></i></a>
+      </div>
+      <p class="mt-3 mb-0">&copy; 2025 EGICH – Gestión Integral del Capital Humano</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function showLoader() {
+      document.getElementById('overlay').style.display = 'block';
+      document.getElementById('loader').style.display = 'block';
+    }
+  </script>
+  </body>
+</html>

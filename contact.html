@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D5S7022K5D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D5S7022K5D');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, h4 {
+            font-family: 'Advent Pro', sans-serif;
+            color: #5ead7d!important;
+        }
+        h1{
+            margin-block-start: 0.2em;
+            margin-block-end: 0.2em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+        }
+        body {
+            font-family: "Open Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #333;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 80%;
+            max-width: 1000px;
+        }
+        .contact-form {
+            background-color: #f4f4f4;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+        }
+        .contact-info {
+            margin-left: 3rem;
+            width: 30%;
+        }
+        .contact-form h2,
+        .contact-info h2 {
+            color: #003a45;
+            margin-bottom: 1rem;
+        }
+        .contact-form p,
+        .contact-info p {
+            color: #003a45;
+            margin-bottom: 1rem;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #003a45;
+        }
+        .contact-form input,
+        .contact-form textarea ,
+        .contact-form select {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-family: "Open Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+        }
+        .contact-form input[type="submit"] {
+            background-color: #003a45;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .contact-form input[type="submit"]:hover {
+            background-color: #005a65;
+        }
+        
+        /* Estilos del loader */
+        .loader {
+            border: 8px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 8px solid #3498db;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: none; /* Oculto por defecto */
+            z-index: 1000;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Estilos para deshabilitar la página mientras se muestra el loader */
+        .overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none; /* Oculto por defecto */
+        }
+    </style>
+    <script>
+        // Mostrar el loader y la superposición al enviar el formulario
+        function showLoader() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('loader').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <!-- Loader y superposición -->
+    <div class="overlay" id="overlay"></div>
+    <div class="loader" id="loader"></div>
+
+    <div class="container">
+        <div class="contact-form">
+            <p>Complete el siguiente formulario para ponerse en contacto con nosotros. O escriba un correo a <a href="mailto:info@apresmountaintravel.com">info@apresmountaintravel.com</a></p>
+            <form action="process_contact.php" method="post" onsubmit="showLoader()">
+                <label for="name">Nombre y Apellido:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="country">País:</label>
+                <input type="tel" id="country" name="country" required>
+
+                <label>Medio de contacto preferido:</label>
+                <select id="preferred_contact" name="preferred_contact" required>
+                    <option value="telefono">Teléfono</option>
+                    <option value="whatsapp">Whatsapp</option>
+                    <option value="email">E-mail</option>
+                </select>
+                <br>
+                <label for="contact_time">Franja horaria de contacto:</label>
+                <select id="contact_time" name="contact_time" required>
+                    <option value="8 a 12">8:00 hs. a 12:00 hs.</option>
+                    <option value="12 a 16">12:00 hs. a 16:00 hs.</option>
+                    <option value="16 a 20">16:00 hs. a 20:00 hs.</option>
+                </select>
+                <br>
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+        <div class="contact-info">
+           
+            <h1>Contacto</h1>
+            <p>Teléfono: +1 604 3899201<br>
+               Whatsapp: +1 604 3899201<br>
+            <a href="mailto:info@apresmountaintravel.com">info@apresmountaintravel.com</a></p>
+
+            <h1>Horarios de Atención</h1>
+            <p>Lunes: 8am – 7pm<br>
+            Martes: 8am – 5pm<br>
+            Miércoles: 8am – 5pm<br>
+            Jueves: 8am – 7pm<br>
+            Viernes: 8am – 5pm</p>
+        </div>
+    </div>
+</body>
+</html>

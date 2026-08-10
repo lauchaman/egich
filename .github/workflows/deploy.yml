@@ -15,16 +15,21 @@ jobs:
 
       - name: Subir archivos por FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          server-dir: /public_html/
-          security: loose
-          timeout: 120000
-          log-level: verbose
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/.github/**
+      with:
+      server: ${{ secrets.FTP_SERVER }}
+      username: ${{ secrets.FTP_USER }}
+      password: ${{ secrets.FTP_PASSWORD }}
+
+      protocol: ftps
+      port: 21
+
+      server-dir: /public_html/
+
+      security: loose
+      timeout: 120000
+      log-level: verbose
+
+      exclude: |
+        **/.git*
+        **/.git*/**
+        **/.github/**
